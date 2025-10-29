@@ -25,20 +25,12 @@ const connectDB = async () => {
 connectDB()
 
 const studentRoutes = require("./routes/studentRoutes")
-const productRoutes = require("./routes/productRoutes")
 
 app.use("/students", studentRoutes)
-app.use("/products", productRoutes)
 
 // Health check endpoint
 app.get("/", (req, res) => {
-  res.json({
-    message: "API Server is running",
-    endpoints: {
-      students: "/students",
-      products: "/products",
-    },
-  })
+  res.json({ message: "Student Management System API is running" })
 })
 
 // Error handling middleware
